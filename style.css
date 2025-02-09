@@ -1,41 +1,50 @@
 .container {
-    margin: auto;
+    margin: 80px auto;
     background-color: #FFF2F2;
-    max-width: 1200px;
+    width:960px;
     padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position: relative;
 }
 
-body{
+.top-bar {
+    position: fixed;  /* Tetap di atas saat scroll */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;  /* Beri tinggi agar terlihat */
+    background-color: #FFF2F2;
+    border-bottom: 3px solid #A9B5DF;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;  /* Pastikan berada di atas elemen lain */
+}
+
+
+body {
     font: normal 16px/28px Arial, sans-serif;
     background-color: #A9B5DF;
     color: #2D336B;
     background-image: url(img/pink-flowers.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
-.content{
-    padding: 5px;
+.twitter{
+    width: 200px;
+    height: 200px;
+    background-image: url(img/twitter.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+    position: absolute;
+    top: -12px;
+    right: -60px;
 }
-
-.content h2{
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.content .penulis{
-    font-size: 12px;
-    margin-top: -5px;
-}
-
-.content p{
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.content .penulis a {
-    color: #A9B5DF;
-    text-decoration: none;
-}
-.header{
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,52 +54,118 @@ body{
 .header .judul {
     font-size: 40px;
     font-weight: bold;
+    color: #2D336B;
 }
 
-.header ul{
+.header ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; 
+    display: flex;
 }
 
-.header ul li{
+.header ul li {
     margin-right: 20px;
 }
 
-.header a{
+.header a {
     text-decoration: none;
     color: #7886C7;
-    padding: 3px;
+    padding: 5px 10px;
     border-radius: 5px;
     transition: 0.3s ease-in-out;
 }
 
-.header a:hover{
+.header a:hover {
     background-color: #2D336B;
     color: #FFF2F2;
 }
 
 .hero {
-    height: 500px;
+    height:500px;
     background-image: url(img/meong.jpg);
     background-size: cover;
-    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     border-top: 5px solid #7886C7;
     border-bottom: 5px solid #7886C7;
+    border-radius: 10px;
 }
 
+.content {
+    padding: 10px;
+}
+
+.main {
+    width: 600px;
+    padding: 0px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.main h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2D336B;
+    margin-top: 20px;
+}
+
+.main p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.sidebar{
+    width: 300px;
+    float: right;
+    padding: 20px;
+}
+
+.sidebar h3{
+    font-weight: bold;
+    color: #7886C7;
+}
+
+.sidebar img{
+    width: 70px;
+    height: 80px;
+    float: left;
+    padding-right: 10px;
+}
+
+.sidebar p{
+    font : 12px/18px sans-serif;
+}
+
+/* Footer */
 .footer {
     background-color: #2D336B;
     padding: 10px;
+    display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 10px;
 }
 
-.footer .copy{
+.footer .copy {
     color: #FFF2F2;
     text-align: center;
     font-size: 12px;
+}
+
+/* cf clearfix clearfloat */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
 }
